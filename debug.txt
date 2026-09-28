@@ -1,0 +1,115 @@
+Login handler started
+POST received
+Username: admin12345
+Query executed. Row count: 1
+Password incorrect
+Login handler started
+POST received
+Username: admin12345
+Query executed. Row count: 1
+Password incorrect
+Login handler started
+POST received
+Username: admin12345
+Query executed. Row count: 1
+Password incorrect
+Login handler started
+POST received
+Username: admin12345
+Query executed. Row count: 1
+Password incorrect
+Login handler started
+POST received
+Username: admin12345
+Query executed. Row count: 1
+Password incorrect
+Login handler started
+POST received
+Username: admin12345
+Query executed. Row count: 1
+Password incorrect
+Login handler started
+POST received
+Username: admin12345
+Query executed. Row count: 1
+Password incorrect
+Login handler started
+POST received
+Username: admin12345
+Query executed. Row count: 1
+Password incorrect
+Login handler started
+POST received
+Username: admin12345
+Query executed. Row count: 1
+Password incorrect
+Login handler started
+POST received
+Username: admin12345
+Query executed. Row count: 1
+Password incorrect
+Login handler started
+POST received
+Username: admin12345
+Query executed. Row count: 1
+❌ Invalid password
+Login handler started
+POST received
+Username: admin12345
+Query executed. Row count: 1
+❌ Invalid password
+Login handler started
+POST received
+Username: admin12345
+Query executed. Row count: 1
+❌ Invalid password
+Login handler started
+POST received
+Username: admin12345
+Query executed. Row count: 1
+❌ Invalid password
+Login started
+Wrong password
+Login started
+Wrong password
+Login started
+Wrong password
+Login attempt started
+Username: admin
+User found: Array
+(
+    [tbl_user_id] => 18
+    [username] => admin
+    [password] => $2y$10$9UWnVmX9o1QlS0ZzJpYzSeKOeZfX0UfWvT8K0gLoK0OcvVX6HhGdy
+)
+❌ Wrong password
+Login attempt started
+Username: admin12345
+User found: Array
+(
+    [tbl_user_id] => 15
+    [username] => admin12345
+    [password] => admin12345
+)
+❌ Wrong password
+Login attempt started
+Login attempt started
+Username: admin
+User found: Array
+(
+    [tbl_user_id] => 18
+    [username] => admin
+    [password] => $2y$10$9UWnVmX9o1QlS0ZzJpYzSeKOeZfX0UfWvT8K0gLoK0OcvVX6HhGdy
+)
+❌ Wrong password
+Login attempt started
+Login attempt started
+Username: admin12345
+User found: Array
+(
+    [tbl_user_id] => 15
+    [username] => admin12345
+    [password] => admin12345
+)
+❌ Wrong password
+Login attempt started

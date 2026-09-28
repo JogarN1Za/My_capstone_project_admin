@@ -1,0 +1,377 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  height: 100%;
+  width: 260px;
+  padding: 20px 0;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+nav.open .sidebar {
+  left: 0;
+}
+
+/* Show sidebar on desktop */
+@media screen and (min-width: 768px) {
+  .sidebar {
+    left: 0;
+  }
+
+  /* Adjust main content to prevent overlap */
+  .main {
+    margin-left: 260px;
+  }
+
+  /* Hide menu icon on desktop */
+  .menu-icon {
+    display: none;
+  }
+}
+
+/* Sidebar Content */
+.sidebar-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 16px;
+}
+
+.list {
+  list-style: none;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  padding: 14px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #707070;
+}
+
+.lists .nav-link:hover {
+  background-color: #4070f4;
+  color: #fff;
+}
+
+.nav-link .icon {
+  margin-right: 14px;
+  font-size: 20px;
+}
+
+.main {
+  margin-left: 260px; /* Push content to the right */
+  padding: 8% 5% 5%;
+  width: calc(100% - 260px);
+  transition: margin-left 0.4s ease;
+  background: #f4f4f4;
+  min-height: 100vh; /* Ensure full height */
+}
+
+/* Overlay for Mobile */
+@media screen and (max-width: 767px) {
+  /* Overlay to cover everything when sidebar opens */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+    pointer-events: none; /* Prevent clicks */
+    z-index: 999; /* Ensure it’s above everything */
+  }
+
+  /* Show overlay when sidebar is open */
+  nav.open ~ .overlay {
+    left: 0;
+    pointer-events: auto; /* Allow clicks to close */
+  }
+
+  /* Ensure .logo is also covered */
+  nav.open .logo {
+    z-index: 0; /* Push behind overlay */
+  }
+
+  .main {
+    margin-left: 0; /* Reset on mobile when sidebar is hidden */
+    width: 100%;
+    margin-top: 10%;
+  }
+
+  .container-wrapper {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+  }
+
+  .container {
+    width: 90%; /* Full width for mobile */
+    margin-bottom: 20px; /* Space between stacked items */
+  }
+}
+
+/* Logo styling */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Space between icon and text */
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-icon {
+  font-size: 26px;
+  color: #4070f4;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-icon:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+.logo-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #4070f4;
+  letter-spacing: 1px;
+}
+
+/* Container for the form and table */
+/* General Styling */
+body {
+  min-height: 100vh;
+  background: #e3f2fd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Main Section */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Container */
+.container {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 1000px;
+}
+
+/* Header */
+h4 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Table Styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table thead {
+  background: #1976d2; /* A darker blue to match #e3f2fd */
+  color: white;
+}
+
+.table tbody tr:hover {
+  background: rgba(25, 118, 210, 0.1); /* Light blue hover effect */
+}
+
+/* Buttons */
+#editBtn, #deleteBtn {
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+#editBtn {
+  background: #ffa000; /* Amber */
+  color: white;
+}
+
+#editBtn:hover {
+  background: #ff8f00;
+}
+
+#deleteBtn {
+  background: #d32f2f; /* Red */
+  color: white;
+}
+
+#deleteBtn:hover {
+  background: #b71c1c;
+}
+
+/* Modal */
+.modal-content {
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.modal-header {
+  background: #1976d2;
+  color: white;
+  border-radius: 10px 10px 0 0;
+}
+
+.modal-header .close {
+  color: white;
+  font-size: 20px;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+/* Form Styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-dark {
+  background: #1976d2;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.btn-dark:hover {
+  background: #1565c0;
+}
+modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Open modal when targeted */
+.modal:target {
+  display: flex;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  width: 400px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.close {
+  display: block;
+  text-align: right;
+  font-size: 24px;
+  cursor: pointer;
+  color: red;
+}
+
+/* Button styles */
+.editBtn, .deleteBtn {
+  cursor: pointer;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  margin: 2px;
+}
+
+.editBtn { background-color: lightblue; }
+.deleteBtn { background-color: lightcoral; }
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .container-wrapper {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .admin-list {
+    padding: 10px; /* Reduce padding on smaller screens */
+}
+
+.admin-list table {
+    display: block; /* Make the table block-level for better responsiveness */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    white-space: nowrap; /* Prevent text from wrapping in cells */
+}
+
+.admin-list th,
+.admin-list td {
+    display: inline-block; /* Make cells inline-block for better control */
+    width: auto; /* Allow cells to size based on content */
+}
+}

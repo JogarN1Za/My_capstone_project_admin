@@ -1,0 +1,714 @@
+/* Dark Theme Styles (consistent with other pages) */
+body {
+    background-color: #0a0b0c;
+    color: #e0e0e0;
+}
+
+nav.top-nav {
+    background-color:#1f2937;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid #334155;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon {
+    color: #64748b;
+    font-size: 1.3em;
+    cursor: pointer;
+    display: none;
+}
+
+.logo-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #f8fafc;
+    margin-left: 10px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 75px;
+    left: 0;
+    width: 240px;
+    height: calc(100vh - 75px);
+    background-color: #1e293b;
+    color: #e0e0e0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 300;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar-content {
+    padding: 15px;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.tutorials-heading {
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    padding-left: 5px;
+}
+
+.lists {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+.list-group-heading {
+    font-weight: bold;
+    color: #cbd5e1;
+    padding: 8px 15px;
+    margin-bottom: 3px;
+    font-size: 0.9em;
+}
+.list-group-heading .nav-link {
+    font-size: 14px;
+    padding: 12px 20px;
+    font-weight: bold;
+    color: #ffffff;
+    display: block;
+}
+.list-item {
+    margin-bottom: 3px;
+}
+
+.nav-link {
+    display: block;
+    color: #a3a3a3;
+    text-decoration: none;
+    padding: 7px 20px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    font-size: 0.85em;
+}
+
+.nav-link:hover {
+    background-color: #334155;
+    color: #f0f0f0;
+}
+
+.main {
+    padding: 40px 20px;
+    padding-top: 75px;
+    background-color: #121827;
+    color:#727883;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.main > div {
+    padding: 20px;
+    background-color: #121827;
+    border-radius: 4px;
+}
+
+nav.additional-nav {
+    background-color: #374151;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 101;
+}
+
+nav.additional-nav .block {
+    display: none;
+}
+
+.sidebar-backdrop {
+    position: fixed;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 75px);
+    background: #111827;
+    z-index: 250;
+    display: none;
+}
+
+.sidebar-backdrop.show {
+    display: block;
+}
+
+/* Right Nav Section */
+.right-icons {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.right-links-desktop {
+    display: flex;
+    gap: 10px;
+}
+
+.right-icons a {
+    color: #64748b;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 0.9em;
+    transition: color 0.2s ease;
+}
+
+.right-icons a:hover {
+    color: #f8fafc;
+}
+
+.dropdown-toggle-icon {
+    color: #f0f0f0;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: none;
+    margin-left: 10px;
+}
+
+.right-dropdown {
+    position: absolute;
+    right: 40px;
+    top: 45px;
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 4px;
+    display: none;
+    flex-direction: column;
+    width: 180px;
+    z-index: 999;
+}
+.right-icons i {
+    font-size: 24px; /* Change to your desired size */
+}
+
+.right-dropdown a {
+    color: #cbd5e1;
+    text-decoration: none;
+    padding: 10px;
+    border-bottom: 1px solid #334155;
+    display: block;
+    font-size: 0.9em;
+}
+
+.right-dropdown a:hover {
+    background-color: #334155;
+}
+
+.right-dropdown.show {
+    display: flex;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 769px) {
+    .right-links-desktop {
+        display: flex;
+    }
+
+    .dropdown-toggle-icon,
+    .right-dropdown {
+        display: none !important;
+    }
+
+    .sidebar {
+        transform: translateX(0) !important;
+    }
+
+    .main {
+        margin-left: 240px;
+    }
+
+    .menu-icon {
+        display: none !important;
+    }
+
+    .sidebar-backdrop {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .right-links-desktop {
+        display: none;
+    }
+
+    .dropdown-toggle-icon {
+        display: block;
+    }
+
+    .menu-icon {
+        display: block;
+        margin-right: 10px;
+    }
+
+    .main {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+// ✅ Count unread notifications from the notifications table
+$stmt = $conn->prepare("SELECT COUNT(*) AS unread_count FROM notifications WHERE user_id = :user_id AND status = 'unread' AND deleted = 0");
+$stmt->execute([':user_id' => $userId]);
+$notification = $stmt->fetch(PDO::FETCH_ASSOC);
+$unreadCount = $notification['unread_count'] ?? 0;
+
+// ✅ Count unread notifications from the notifications table
+$stmt = $conn->prepare("SELECT COUNT(*) AS unread_count FROM notifications WHERE user_id = :user_id AND status = 'unread' AND deleted = 0");
+$stmt->execute([':user_id' => $user_id]);
+$notification = $stmt->fetch(PDO::FETCH_ASSOC);
+$unreadCount = $notification['unread_count'] ?? 0;
+
+<a href="achievement.php" class="position-relative">
+    <i class='bx bx-bell'></i>
+    <?php if ($unreadCount > 0): ?>
+        <span class="badge badge-danger position-absolute" style="top: -5px; right: -10px; font-size: 0.7em; border-radius: 50%;">
+            <?= $unreadCount ?>
+        </span>
+    <?php endif; ?>
+</a>
+
+#727883
+
+#111827
+
+#1f2937
+
+admin notification
+
+// Fetch the count of pending notifications
+$stmt = $conn->prepare("SELECT COUNT(*) FROM reports WHERE status = 'Pending'");
+$stmt->execute();
+$pendingTotalCount = $stmt->fetchColumn();
+
+<a href="notifications.php" style="position: relative;">
+    <i class='bx bx-bell'></i>
+    <?php if ($pendingTotalCount > 0): ?>
+        <span class="notification-badge"><?= $pendingTotalCount ?></span>
+    <?php endif; ?>
+</a>
+
+.notification-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 6px;
+    font-size: 0.7em;
+}
+
+<a href="test.php">Create Game Levels</a>
+<a href="logout.php"><i class='bx bx-log-out'></i></a>
+
+?????
+
+
+tut_part.php style//
+
+
+/* Dark Theme Styles (consistent with other pages) */
+body {
+    background-color: #0a0b0c;
+    color: #e0e0e0;
+}
+
+nav.top-nav {
+    background-color:#1f2937;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid #334155;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon {
+    color: #64748b;
+    font-size: 1.3em;
+    cursor: pointer;
+    display: none;
+}
+
+.logo-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #f8fafc;
+    margin-left: 10px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 75px;
+    left: 0;
+    width: 240px;
+    height: calc(100vh - 75px);
+    background-color: #1e293b;
+    color: #e0e0e0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 300;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar-content {
+    padding: 15px;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.tutorials-heading {
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    padding-left: 5px;
+}
+
+.lists {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+.list-group-heading {
+    font-weight: bold;
+    color: #cbd5e1;
+    padding: 8px 15px;
+    margin-bottom: 3px;
+    font-size: 0.9em;
+}
+.list-group-heading .nav-link {
+    font-size: 14px;
+    padding: 12px 20px;
+    font-weight: bold;
+    color: #ffffff;
+    display: block;
+}
+.list-item {
+    margin-bottom: 3px;
+}
+
+.nav-link {
+    display: block;
+    color: #a3a3a3;
+    text-decoration: none;
+    padding: 7px 20px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    font-size: 0.85em;
+}
+
+.nav-link:hover {
+    background-color: #334155;
+    color: #f0f0f0;
+}
+
+.main {
+    padding: 40px 20px;
+    padding-top: 75px;
+    background-color: #121827;
+    color:#727883;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.main > div {
+    padding: 20px;
+    background-color: #121827;
+    border-radius: 4px;
+}
+
+nav.additional-nav {
+    background-color: #374151;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 101;
+}
+
+nav.additional-nav .block {
+    display: none;
+}
+
+.sidebar-backdrop {
+    position: fixed;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 75px);
+    background: #111827;
+    z-index: 250;
+    display: none;
+}
+
+.sidebar-backdrop.show {
+    display: block;
+}
+
+/* Right Nav Section */
+.right-icons {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.right-links-desktop {
+    display: flex;
+    gap: 10px;
+}
+
+.right-icons a {
+    color: #64748b;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 0.9em;
+    transition: color 0.2s ease;
+}
+
+.right-icons a:hover {
+    color: #f8fafc;
+}
+
+.dropdown-toggle-icon {
+    color: #f0f0f0;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: none;
+    margin-left: 10px;
+}
+
+.right-dropdown {
+    position: absolute;
+    right: 40px;
+    top: 45px;
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 4px;
+    display: none;
+    flex-direction: column;
+    width: 180px;
+    z-index: 999;
+}
+.right-icons i {
+    font-size: 24px; /* Change to your desired size */
+}
+
+.right-dropdown a {
+    color: #cbd5e1;
+    text-decoration: none;
+    padding: 10px;
+    border-bottom: 1px solid #334155;
+    display: block;
+    font-size: 0.9em;
+}
+
+.right-dropdown a:hover {
+    background-color: #334155;
+}
+
+.right-dropdown.show {
+    display: flex;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 769px) {
+    .right-links-desktop {
+        display: flex;
+    }
+
+    .dropdown-toggle-icon,
+    .right-dropdown {
+        display: none !important;
+    }
+
+    .sidebar {
+        transform: translateX(0) !important;
+    }
+
+    .main {
+        margin-left: 240px;
+    }
+
+    .menu-icon {
+        display: none !important;
+    }
+
+    .sidebar-backdrop {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .right-links-desktop {
+        display: none;
+    }
+
+    .dropdown-toggle-icon {
+        display: block;
+    }
+
+    .menu-icon {
+        display: block;
+        margin-right: 10px;
+    }
+
+    .main {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+        /* tut_part.php Specific Styles */
+        .btn-gradient {
+            background: linear-gradient(to right, #007bff, #6610f2);
+            color: white;
+            border: none;
+        }
+
+        .btn-gradient:hover {
+            background: linear-gradient(to right, #0056b3, #4c08b3);
+        }
+
+        .list-group-item {
+            border-left: 3px solid transparent; /* Default border */
+            transition: border-left 0.3s ease-in-out;
+            background-color: #1e293b; /* Dark background */
+            color: #f8f9fa; /* Light text */
+            border-color: #334155; /* Dark border */
+        }
+
+        .list-group-item.completed {
+            border-left-color: #28a745; /* Highlight completed items */
+            background-color: #27374d; /* Slightly darker completed background */
+        }
+
+        .tutorial-item:hover, .quiz-item:hover {
+            background-color: #334155;
+        }
+
+        .alert-info, .alert-warning, .modal-content, .modal-header, .modal-body, .modal-footer {
+            background-color: #1e293b;
+            color: #f8f9fa;
+            border-color: #334155;
+        }
+
+        .modal-header .close {
+            color: #f8f9fa;
+            opacity: 0.7;
+        }
+
+        .modal-header .close:hover {
+            opacity: 1;
+        }
+
+        .form-label {
+            color: #cbd5e1;
+        }
+
+        .form-control {
+            background-color: #27374d;
+            border-color: #334155;
+            color: #e0e0e0;
+        }
+
+        .btn-outline-primary {
+            color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+            color: #fff;
+        }
+
+        .btn-success:hover {
+            background-color: #1e7e34;
+            border-color: #1e7e34;
+        }
+
+        .btn-outline-success {
+            color: #28a745;
+            border-color: #28a745;
+        }
+
+        .btn-outline-success:hover {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+            color: #fff;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #c82333;
+        }
+
+        .text-primary {
+            color: #007bff !important;
+        }
+
+        .text-success {
+            color: #28a745 !important;
+        }
+
+        .text-info {
+            color: #17a2b8 !important;
+        }
+
+        .text-muted {
+            color: #6c757d !important;
+        }
